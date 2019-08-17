@@ -33,7 +33,7 @@ class Stream implements StreamInterface
             $this->stream = $stream;
         } else {
             $this->stream = fopen('php://temp', $mode);
-            $this->stream->write($stream);
+            $this->write($stream);
         }
     }
 
