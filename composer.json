@@ -1,0 +1,21 @@
+{
+  "name": "borsch/http-message-factories",
+  "description": "An implementation of PSR-7 HTTP Message and PSR-17 HTTP Factories.",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alexandre DEBUSSCHERE",
+      "email": "zizilex@gmail.com"
+    }
+  ],
+  "require": {
+    "psr/http-message": "1.0.1",
+    "psr/http-factory": "1.0.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Borsch\\": "src/"
+    }
+  }
+}
