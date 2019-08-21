@@ -57,7 +57,7 @@ class ServerRequest extends Request implements ServerRequestInterface
                 $this->headers[$header] = [];
             }
 
-            $this->headers[$header] = array_merge($this->headers[$header], $value);
+            $this->headers[$header][] = $value;
         }
     }
 
