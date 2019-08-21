@@ -96,6 +96,8 @@ class Response extends Message implements ResponseInterface
             throw new \InvalidArgumentException('Status Code is invalid.');
         }
 
+        parent::__construct();
+
         $this->status_code = $code;
         $this->reason_phrase = $reason_phrase ?: $this->status_codes[$code];
     }

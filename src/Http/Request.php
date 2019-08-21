@@ -28,12 +28,13 @@ class Request extends Message implements RequestInterface
      */
     public function __construct(string $method, $uri)
     {
-        $this->method = $method;
-
         if (!is_string($uri) && !$uri instanceof UriInterface) {
             throw new \InvalidArgumentException('Uri must be a string or an instance of UriInterface.');
         }
 
+        parent::__construct();
+
+        $this->method = $method;
         $this->uri = is_string($uri) ? new Uri($uri) : $uri;
         $this->request_target = $this->uri->getPath() ?: '/'; // TODO check it out
     }

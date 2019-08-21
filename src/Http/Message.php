@@ -35,6 +35,16 @@ class Message implements MessageInterface
     protected $allowed_protocol_versions = ['1.0', '1.1', '2.0', '2'];
 
     /**
+     * Message constructor.
+     *
+     * @param StreamInterface|null $stream
+     */
+    public function __construct(StreamInterface $stream = null)
+    {
+        $this->stream = $stream ?: new Stream(fopen('php://temp', 'r+'));
+    }
+
+    /**
      * Retrieves the HTTP protocol version as a string.
      * The string MUST contain only the HTTP version number (e.g., "1.1", "1.0").
      *
