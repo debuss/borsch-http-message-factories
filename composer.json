@@ -11,7 +11,8 @@
   ],
   "require": {
     "psr/http-message": "^1.0",
-    "psr/http-factory": "^1.0"
+    "psr/http-factory": "^1.0",
+    "ralouphie/getallheaders": "3.0.3"
   },
   "autoload": {
     "psr-4": {
