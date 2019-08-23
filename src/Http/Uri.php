@@ -42,14 +42,12 @@ class Uri implements UriInterface
      */
     public function __construct(string $uri = '')
     {
-        if (strlen($uri)) {
-            if (filter_var($uri, FILTER_VALIDATE_URL) === false) {
-                throw new \InvalidArgumentException('Uri is not valid.');
-            }
+        if (strlen($uri) && filter_var($uri, FILTER_VALIDATE_URL) === false) {
+            throw new \InvalidArgumentException('Uri is not valid.');
+        }
 
-            foreach (parse_url($uri) as $prop => $value) {
-                $this->{$prop} = $value;
-            }
+        foreach (parse_url($uri) as $prop => $value) {
+            $this->{$prop} = $value;
         }
     }
 

@@ -160,7 +160,7 @@ class Factory implements
         string $clientFilename = null,
         string $clientMediaType = null
     ): UploadedFileInterface {
-        // TODO: Implement createUploadedFile() method.
+        return new UploadedFile($stream, $size, $error, $clientFilename, $clientMediaType);
     }
 
     /**

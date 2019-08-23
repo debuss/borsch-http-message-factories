@@ -51,6 +51,7 @@ class ServerRequest extends Request implements ServerRequestInterface
 
         $this->uploaded_files = Helper::getUploadedFilesFromGlobal();
 
+        $this->headers = [];
         foreach (getallheaders() as $header => $value) {
             $header = trim((string)$header);
             if (!isset($this->headers[$header])) {
